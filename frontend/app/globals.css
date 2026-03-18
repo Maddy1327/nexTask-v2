@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #171717;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.auth-page {
+  height: 100vh;
+  background: url("../public/glass-bg.png") no-repeat center center fixed;
+}
+
+.auth-page form {
+  position: relative;
+  box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.auth-page img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0.12;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-layout::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Utilities */
+.u-triangle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 8px solid #3aafae;
+  transform: translateY(-50%);
+}
+
+html.dark body {
+  background-color: #111827;
+  color: #f3f4f6;
+}
+
+html.dark .auth-page {
+  background:
+    radial-gradient(circle at top, rgba(58, 175, 174, 0.15), transparent 30%),
+    linear-gradient(180deg, #0f172a 0%, #111827 100%);
+}
+
+html.dark .auth-page form,
+html.dark .auth-page > div,
+html.dark .main-layout,
+html.dark header,
+html.dark .basis-\[5rem\],
+html.dark .w-\[20rem\] {
+  background-color: #111827 !important;
+  color: #f3f4f6 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark .main-layout {
+  background-color: #0f172a !important;
+}
+
+html.dark .fixed .bg-white,
+html.dark .bg-\[\#f9f9f9\],
+html.dark .bg-\[\#F9F9F9\] {
+  background-color: #111827 !important;
+  color: #f3f4f6 !important;
+}
+
+html.dark .text-gray-400,
+html.dark .text-gray-500,
+html.dark .text-\[\#999\],
+html.dark .text-\[\#666\] {
+  color: #9ca3af !important;
+}
+
+html.dark input,
+html.dark textarea,
+html.dark select {
+  background-color: #1f2937 !important;
+  color: #f9fafb !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+html.dark .border,
+html.dark .border-2,
+html.dark .border-t-2 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark .shadow-md,
+html.dark .shadow-sm {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28) !important;
+}
+
+html.dark .u-triangle::before {
+  border-right-color: #3aafae;
+}
